@@ -69,7 +69,7 @@ HOST_CAIRO_DEPENDENCIES = \
 # DirectFB svg support rely on Cairo and Cairo DirectFB support depends on
 # DirectFB. Break circular dependency by disabling DirectFB support in Cairo
 # (which is experimental)
-ifeq ($(BR2_PACKAGE_DIRECTFB)x$(BR2_PACKAGE_DIRECTFB_SVG),yx)
+ifeq ($(BR2_PACKAGE_DIRECTFB),y)
 CAIRO_CONF_OPTS += --enable-directfb
 CAIRO_DEPENDENCIES += directfb
 else
